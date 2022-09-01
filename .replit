@@ -1,0 +1,15 @@
+compile = ["swiftc", "-wmo", "-o", "main", "main.swift", "randomixer.swift", "atomizer.swift"]
+run = ["./main"]
+
+entrypoint = "main.swift"
+
+hidden = ["main"]
+
+[nix]
+channel = "unstable"
+
+[languages.swift]
+pattern = "**/*.swift"
+
+[languages.swift.languageServer]
+start = ["sourcekit-lsp"]
